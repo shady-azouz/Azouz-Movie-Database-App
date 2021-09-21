@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
   @ViewChild('f') signinForm!: NgForm;
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -21,11 +22,10 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.signinForm.value);
     console.log("Validation: " + this.signinForm.valid);
-
-    if (this.signinForm.valid) {
-
-    } else {
-      
-    }
+    if (this.loginService.validateLoginAttempt(this.signinForm.value.email, this.signinForm.value.password))
+      console.log('Signed In');
+    else
+      console.log('Signe In Failed!')
+    
   }
 }
