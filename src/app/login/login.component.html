@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="left col-sm-6">
+        <h3>Insert Logo Here!</h3>
+    </div>
+    <div class="right col-sm-6">
+        <form class="centered" (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="custom-container">
+                <div class="flex-container">
+                    <label for="email"><strong>e-mail</strong></label>
+                    <input 
+                        class="input" 
+                        type="text" 
+                        placeholder="Enter E-Mail" 
+                        minlength="3" 
+                        name="email" 
+                        ngModel
+                        required
+                        email
+                        #email="ngModel">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="!email.valid && email.touched">
+                    Please enter a valid password!
+                </div>
+                <hr>
+                <div class="flex-container">
+                    <label for="password"><strong>Password</strong></label>
+                    <input 
+                        class="input" 
+                        type="password" 
+                        placeholder="Enter Password" 
+                        minlength="8" 
+                        maxlength="15" 
+                        name="password" 
+                        ngModel
+                        required
+                        #password="ngModel">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="!password.valid && password.touched">
+                    Please enter a valid password!
+                </div>
+                <hr>
+                <button 
+                    type="submit"
+                    [disabled]="!f.valid"
+                    [ngClass]="{'disabledButton': !f.valid, 'loginBtn': f.valid}">Login</button>
+                <br>
+                <label>
+                <input type="checkbox" name="remember"> Remember me
+                </label>
+            </div>
+            </form>
+    </div>
+</div>

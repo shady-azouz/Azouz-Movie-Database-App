@@ -1,0 +1,74 @@
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.disabledButton {
+    background-color: grey;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input.ng-invalid.ng-touched {
+    color: red;
+    border: 1px solid red;
+}
+
+.custom-container {
+    background-color: white;
+    opacity: 1;
+    padding: 16px;
+}
+
+.input {
+    margin-left: 4px;
+}
+
+.loginBtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.loginBtn:hover {
+    opacity: 0.8;
+}
+
+.left {
+    justify-content : center;
+    align-items : center;
+    display: flex;
+    height: 100%;
+    left: 0;
+    margin-bottom: 0;
+    margin-right:0;
+  }
+
+.right {
+    justify-content : center;
+    align-items : center;
+    display: flex;
+    height: 100%;
+    /* background-image: url("restaurant.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+    right: 0;
+  }
+
+form {border: 3px solid #f1f1f1a8;}
