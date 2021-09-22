@@ -2,126 +2,128 @@
     <div class="centered col-md-6">
         <h3>Insert Logo Here!</h3>
     </div>
-    <div class="col-md-6">
-        <button (click)="onSignIn()" [hidden]="signIn">Sign In</button>
-        <button (click)="onSignUp()" [hidden]="signUp">Sign Up</button>
-        <div class="centered">
-            <form [hidden]="!signIn" class="flex-center" (ngSubmit)="onSubmitLogin()" #fLogin="ngForm">
-                <div class="custom-container">
-                    <div class="flex-container">
-                        <label for="email"><strong>e-mail</strong></label>
-                        <input 
-                            class="input" 
-                            type="text" 
-                            placeholder="example@example.com" 
-                            minlength="3" 
-                            name="email" 
-                            ngModel
-                            required
-                            email
-                            #email="ngModel">
-                    </div>
-                    <div class="alert alert-danger" role="alert" *ngIf="!email.valid && email.touched">
-                        Please enter a valid e-mail!
-                    </div>
-                    <hr>
-                    <div class="flex-container">
-                        <label for="password"><strong>Password</strong></label>
-                        <input 
-                            class="input" 
-                            type="password" 
-                            placeholder="Enter Password" 
-                            minlength="8" 
-                            maxlength="15" 
-                            name="password" 
-                            ngModel
-                            required
-                            #password="ngModel">
-                    </div>
-                    <div class="alert alert-danger" role="alert" *ngIf="!password.valid && password.touched">
-                        Please enter a valid password!
-                    </div>
-                    <hr>
-                    <button 
-                        type="submit"
-                        [disabled]="!fLogin.valid"
-                        [ngClass]="{'disabledButton': !fLogin.valid, 'loginBtn': fLogin.valid}">Login</button>
-                    <br>
-                    <div class="flex-container">
-                        <label class="verticalCenter">
-                            <input type="checkbox" name="remember"> Remember me
-                            </label>
-                            <button (click)='onCancelSignIn()' class="cancelButton">Cancel</button>
-                    </div>
-                </div>
-            </form>
-
-
-            <form [hidden]="!signUp" class="flex-center" (ngSubmit)="onSubmitSignUp()" #fSignUp="ngForm">
-                <div class="custom-container">
-                    <div class="flex-container">
-                        <label for="email"><strong>Name</strong></label>
-                        <input 
-                            class="input" 
-                            type="text" 
-                            placeholder="Full Name" 
-                            minlength="3" 
-                            name="name" 
-                            ngModel
-                            required
-                            #name="ngModel">
-                    </div>
-                    <hr>
-                    <div class="flex-container">
-                        <label for="email"><strong>e-mail</strong></label>
-                        <input 
-                            class="input" 
-                            type="text" 
-                            placeholder="example@example.com" 
-                            minlength="3" 
-                            name="email" 
-                            ngModel
-                            required
-                            email
-                            #email="ngModel">
-                    </div>
-                    <div class="alert alert-danger" role="alert" *ngIf="!email.valid && email.touched">
-                        Please enter a valid e-mail!
-                    </div>
-                    <div class="alert alert-danger" role="alert" *ngIf="popupMessage">
-                        This e-mail is already registered!
-                    </div>
-                    <hr>
-                    <div class="flex-container">
-                        <label for="password"><strong>Password</strong></label>
-                        <input 
-                            class="input" 
-                            type="password" 
-                            placeholder="Enter Password" 
-                            minlength="8" 
-                            maxlength="15" 
-                            name="password" 
-                            ngModel
-                            required
-                            #password="ngModel">
-                    </div>
-                    <div class="alert alert-danger" role="alert" *ngIf="!password.valid && password.touched">
-                        Please enter a valid password!
-                    </div>
-                    <hr>
-                    <button 
-                        type="submit"
-                        [disabled]="!fSignUp.valid"
-                        [ngClass]="{'disabledButton': !fSignUp.valid, 'loginBtn': fSignUp.valid}">Sign Up</button>
-                    <br>
-                    <div class="flex-container">
-                        <label class="verticalCenter">
-                            <input type="checkbox" name="remember"> Remember me
-                            </label>
-                            <button (click)='onCancelSignUp()' class="cancelButton">Cancel</button>
-                    </div>
-                </div>
-            </form>
+    <div class="col-md-6 centered">
+        <div>
+            <div >
+                <button (click)="onSignIn()" [hidden]="signIn || signUp" class="btn btn-light">Sign In</button>
+                <button (click)="onSignUp()" [hidden]="signUp || signIn" class="btn btn-light">Sign Up</button>
+            </div>
         </div>
+        <form [hidden]="!signIn" class="flex-center" (ngSubmit)="onSubmitLogin()" #fLogin="ngForm">
+            <div class="custom-container">
+                <div class="flex-container">
+                    <label for="email"><strong>e-mail</strong></label>
+                    <input 
+                        class="input" 
+                        type="text" 
+                        placeholder="example@example.com" 
+                        minlength="3" 
+                        name="email" 
+                        ngModel
+                        required
+                        email
+                        #email="ngModel">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="!email.valid && email.touched">
+                    Please enter a valid e-mail!
+                </div>
+                <hr>
+                <div class="flex-container">
+                    <label for="password"><strong>Password</strong></label>
+                    <input 
+                        class="input" 
+                        type="password" 
+                        placeholder="Enter Password" 
+                        minlength="8" 
+                        maxlength="15" 
+                        name="password" 
+                        ngModel
+                        required
+                        #password="ngModel">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="!password.valid && password.touched">
+                    Please enter a valid password!
+                </div>
+                <hr>
+                <button 
+                    type="submit"
+                    [disabled]="!fLogin.valid"
+                    [ngClass]="{'disabledButton': !fLogin.valid, 'loginBtn': fLogin.valid}">Login</button>
+                <br>
+                <div class="flex-container">
+                    <label class="verticalCenter">
+                        <input type="checkbox" name="remember"> Remember me
+                        </label>
+                        <button (click)='onCancelSignIn()' class="cancelButton">Cancel</button>
+                </div>
+            </div>
+        </form>
+
+
+        <form [hidden]="!signUp" class="flex-center" (ngSubmit)="onSubmitSignUp()" #fSignUp="ngForm">
+            <div class="custom-container">
+                <div class="flex-container">
+                    <label for="email"><strong>Name</strong></label>
+                    <input 
+                        class="input" 
+                        type="text" 
+                        placeholder="Full Name" 
+                        minlength="3" 
+                        name="name" 
+                        ngModel
+                        required
+                        #name="ngModel">
+                </div>
+                <hr>
+                <div class="flex-container">
+                    <label for="email"><strong>e-mail</strong></label>
+                    <input 
+                        class="input" 
+                        type="text" 
+                        placeholder="example@example.com" 
+                        minlength="3" 
+                        name="email" 
+                        ngModel
+                        required
+                        email
+                        #email="ngModel">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="!email.valid && email.touched">
+                    Please enter a valid e-mail!
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="popupMessage">
+                    This e-mail is already registered!
+                </div>
+                <hr>
+                <div class="flex-container">
+                    <label for="password"><strong>Password</strong></label>
+                    <input 
+                        class="input" 
+                        type="password" 
+                        placeholder="Enter Password" 
+                        minlength="8" 
+                        maxlength="15" 
+                        name="password" 
+                        ngModel
+                        required
+                        #password="ngModel">
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf="!password.valid && password.touched">
+                    Please enter a valid password!
+                </div>
+                <hr>
+                <button 
+                    type="submit"
+                    [disabled]="!fSignUp.valid"
+                    [ngClass]="{'disabledButton': !fSignUp.valid, 'loginBtn': fSignUp.valid}">Sign Up</button>
+                <br>
+                <div class="flex-container">
+                    <label class="verticalCenter">
+                        <input type="checkbox" name="remember"> Remember me
+                        </label>
+                        <button (click)='onCancelSignUp()' class="cancelButton">Cancel</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

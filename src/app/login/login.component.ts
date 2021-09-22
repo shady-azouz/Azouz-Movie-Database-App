@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
 
   onCancelSignIn() {
     this.signIn = false;
+    this.signinForm.reset();
   }
 
   onSignUp() {
@@ -39,16 +40,20 @@ export class LoginComponent implements OnInit {
 
   onCancelSignUp() {
     this.signUp = false;
+    this.signIn = false;
+    this.signupForm.reset();
   }
 
   onSubmitLogin() {
     console.log(this.signinForm.value);
     console.log("Validation: " + this.signinForm.valid);
-    if (this.loginService.validateLoginAttempt(this.signinForm.value.email, this.signinForm.value.password))
+    if (this.loginService.validateLoginAttempt(this.signinForm.value.email, this.signinForm.value.password)) {
       console.log('Signed In');
+      this.router.navigate(['/movies']);
+    }
     else
       console.log('Signe In Failed!')
-    
+    this.signinForm.reset();
   }
 
   onSubmitSignUp() {
@@ -59,5 +64,6 @@ export class LoginComponent implements OnInit {
     } else {
       this.popupMessage = true;
     }
+    this.signupForm.reset();
   }
 }
