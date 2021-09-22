@@ -1,18 +1,6 @@
 .row {
     height: 100%;
 }
-.centered {
-    position: center;
-    /* top: 50%;
-    left: 50%; */
-    /* transform: translate(-50%, -50%); */
-}
-
-.flex-center {
-    display: flex;
-    align-self: center;
-    justify-self: center;
-}
 
 .flex-container {
     display: flex;
@@ -58,26 +46,30 @@ input.ng-invalid.ng-touched {
     opacity: 0.8;
 }
 
-.left {
-    justify-content : center;
-    align-items : center;
-    display: flex;
-    height: 100%;
-    left: 0;
-    margin-bottom: 0;
-    margin-right:0;
-  }
+.cancelButton {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #ec5c52;
+    color: white;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
 
-.right {
+.cancelButton:hover {
+    opacity: 0.8;
+}
+
+.centered {
     justify-content : center;
     align-items : center;
     display: flex;
     height: 100%;
-    /* background-image: url("restaurant.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
-    right: 0;
-  }
+}
+
+.verticalCenter {
+    display: flex;
+    align-items: center;
+}
 
 form {border: 3px solid #f1f1f1a8;}

@@ -11,7 +11,7 @@ export class LoginService {
   validateLoginAttempt(email: string, password: string) {
     var valid = false;
     for(var account of this.accounts) {
-      if (account.email == email && account.password == password){
+      if (account.email == email.toLowerCase() && account.password == password){
         valid = true;
         break;
       }
@@ -20,6 +20,17 @@ export class LoginService {
   }
 
   signUp(name: string, email: string, password: string) {
-    this.accounts.push({name: name, email: email, password: password});
+    this.accounts.push({name: name, email: email.toLowerCase(), password: password});
+  }
+
+  validateSignUp(email: string) {
+    var valid = true;
+    for(var account of this.accounts) {
+      if(account.email == email.toLowerCase()) {
+        valid = false;
+        break;
+      }
+    }
+    return valid;
   }
 }
