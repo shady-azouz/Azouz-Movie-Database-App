@@ -1,9 +1,10 @@
+<app-navbar></app-navbar>
 <h3 class="centered">Top Movies!</h3>
-<p class="centered">Page: {{ currentPage }}</p>
 <!-- <div class="flex-container">
     <app-movie [movie]="movie" *ngFor="let movie of movies"></app-movie>
 </div> -->
 <div class="row">
+    <p style="margin-left: 30px;" id="pageNumber">Page: {{ currentPage }}</p>
     <app-movie class="col-md-6" [movie]="movie" *ngFor="let movie of movies"></app-movie>
 </div>
 <div class="centered">

@@ -17,7 +17,8 @@ export class TopMoviesComponent implements OnInit {
   constructor(private moviesService: MoviesService, private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.loadMovies(1);
+    this.currentPage = this.moviesService.getCurrentPage();
+    this.loadMovies(this.currentPage);
   }
 
   loadMovies(pageNumber: number) {
@@ -41,12 +42,17 @@ export class TopMoviesComponent implements OnInit {
   }
 
   onPreviousPage() {
-    if(this.currentPage > 1)
+    if(this.currentPage > 1){
       this.loadMovies(--this.currentPage);
+      this.moviesService.setCurrentPage(this.currentPage);
+      window.scroll(0,0);
+    }
   }
 
   onNextPage() {
     this.loadMovies(++this.currentPage);
+    this.moviesService.setCurrentPage(this.currentPage);
+    window.scroll(0,0);
   }
 
 }

@@ -10,6 +10,7 @@ import { Movie } from './movie.module';
 })
 export class MovieComponent implements OnInit {
   @Input() movie!: Movie;
+  
 
   constructor(private router: Router, private moviesService: MoviesService) { }
 
@@ -21,4 +22,5 @@ export class MovieComponent implements OnInit {
     this.moviesService.setDetailedMovie(this.movie);
     this.router.navigate(['/details']);
   }
+
 }

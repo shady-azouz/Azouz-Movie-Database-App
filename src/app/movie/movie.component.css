@@ -1,10 +1,20 @@
 .centered {
-    justify-content : center;
+    justify-content : flex-start;
     align-items : center;
     display: flex;
     height: 100%;
+    width: 100%;
     background-color: white;
     border: 1px solid grey;
+}
+
+.container {
+    margin-top: 2px;
+    margin-left: 4px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: center;
 }
 
 a {

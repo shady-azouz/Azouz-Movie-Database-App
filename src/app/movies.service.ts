@@ -10,6 +10,7 @@ export class MoviesService {
   isLoading = false;
   error: any;
   detailedMovie!: Movie;
+  currentPage = 1;
 
   constructor(private http: HttpClient) { }
 
@@ -35,5 +36,13 @@ export class MoviesService {
 
   setDetailedMovie(movie: Movie) {
     this.detailedMovie = movie;
+  }
+
+  getCurrentPage() {
+    return this.currentPage
+  }
+
+  setCurrentPage(currentPage: number) {
+    this.currentPage = currentPage;
   }
 }
