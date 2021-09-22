@@ -1,0 +1,9 @@
+<div class="container centered">
+    <p>Movie Name {{ movie.title }} </p>
+    <p>release date: {{ movie.release_date }}</p>
+    <img 
+    style="max-height: 75px"
+    [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+    alt="{{  movie.title }}"
+    class="img-responsive">
+</div>

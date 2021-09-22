@@ -1,1 +1,12 @@
-<p>top-movies works!</p>
+<h3 class="centered">Top Movies!</h3>
+<p class="centered">Page: {{ currentPage }}</p>
+<!-- <div class="flex-container">
+    <app-movie [movie]="movie" *ngFor="let movie of movies"></app-movie>
+</div> -->
+<div class="row">
+    <app-movie class="col-md-6" [movie]="movie" *ngFor="let movie of movies"></app-movie>
+</div>
+<div class="centered">
+    <button (click)="onPreviousPage()">&larr;</button>
+    <button (click)="onNextPage()">&rarr;</button>
+</div>
