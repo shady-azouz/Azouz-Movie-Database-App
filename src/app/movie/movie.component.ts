@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MoviesService } from '../movies.service';
 import { Movie } from './movie.module';
 
 @Component({
@@ -9,10 +11,14 @@ import { Movie } from './movie.module';
 export class MovieComponent implements OnInit {
   @Input() movie!: Movie;
 
-  constructor() { }
+  constructor(private router: Router, private moviesService: MoviesService) { }
 
   ngOnInit(): void {
     console.log("i'm in the movie component")
   }
 
+  onClick() {
+    this.moviesService.setDetailedMovie(this.movie);
+    this.router.navigate(['/details']);
+  }
 }

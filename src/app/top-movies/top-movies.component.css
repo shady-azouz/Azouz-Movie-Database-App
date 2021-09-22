@@ -3,6 +3,7 @@
     flex-flow: row wrap;
 }
 .centered {
+    margin-left: 3px;
     justify-content : center;
     display: flex;
     margin-bottom: 10px;

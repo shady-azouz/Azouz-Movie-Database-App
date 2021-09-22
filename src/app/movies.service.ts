@@ -9,6 +9,7 @@ export class MoviesService {
   loadedMovies: Movie[] = [];
   isLoading = false;
   error: any;
+  detailedMovie!: Movie;
 
   constructor(private http: HttpClient) { }
 
@@ -26,5 +27,13 @@ export class MoviesService {
       }
     );
     return this.loadedMovies;
+  }
+
+  getDetailedMovie() {
+    return this.detailedMovie;
+  }
+
+  setDetailedMovie(movie: Movie) {
+    this.detailedMovie = movie;
   }
 }

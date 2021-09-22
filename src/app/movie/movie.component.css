@@ -3,4 +3,16 @@
     align-items : center;
     display: flex;
     height: 100%;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+a {
+    color: white;
+    cursor: pointer;
+}
+
+.flex-container1 {
+    display: flex;
+    justify-content: flex-start
 }

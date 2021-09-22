@@ -1,9 +1,12 @@
 <div class="container centered">
-    <p>Movie Name {{ movie.title }} </p>
+    <div class="flex-container1">
+        <img 
+        style="max-height: 75px"
+        [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+        alt="{{  movie.title }}"
+        class="img-responsive">
+        <p>Movie Name: {{ movie.title }} </p>
+    </div>
     <p>release date: {{ movie.release_date }}</p>
-    <img 
-    style="max-height: 75px"
-    [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
-    alt="{{  movie.title }}"
-    class="img-responsive">
+    <a  (click)="onClick()"><u>view details</u></a>
 </div>

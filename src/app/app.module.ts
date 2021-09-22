@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { TopMoviesComponent } from './top-movies/top-movies.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     TopMoviesComponent,
-    MovieComponent
+    MovieComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
