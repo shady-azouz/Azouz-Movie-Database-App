@@ -1,7 +1,22 @@
 <app-navbar></app-navbar>
-<h1>Movie Name: {{ movie.title }} </h1>
-<img 
-    style="max-height: 120px"
-    [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
-    alt="{{  movie.title }}"
-    class="img-responsive">
+
+<div class="row">
+    <div class="col-sm-4 centered">
+        <img 
+        style="width: 70%;"
+        [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+        alt="{{  movie.title }}"
+        class="img-responsive">
+    </div>
+    <div class="col-sm-8 centered">
+        <ul class="custom-card">
+            <li><h1>Movie: {{ movie.title }}</h1><h2 *ngIf="movie.adult">[18+]</h2></li>
+            <li><h3>Date of Release: <u>{{ movie.release_date }}</u></h3></li>
+            <li><h3>Language: {{ language }}</h3></li>
+            <li><h3>Average Rating: {{ movie.vote_average }}</h3></li>
+            <li><h3>Number of Votes: {{ movie.vote_count }}</h3></li>
+            <!-- <li><h3>Budget: {{ movie.budget }}</h3></li>
+            <li><h3>Homepage: {{ movie.homepage }}</h3></li> -->
+        </ul>
+    </div>
+</div>

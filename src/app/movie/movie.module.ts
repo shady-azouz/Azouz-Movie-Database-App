@@ -22,5 +22,6 @@ export class Movie {
     public tagline: string,
     public title: string,
     public video: boolean,
-    public vote_average: number) {}
+    public vote_average: number,
+    public vote_count: number) {}
  }
