@@ -1,3 +1,4 @@
+import { LoginService } from './../login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,8 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  username = localStorage.getItem('name');
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +21,7 @@ export class NavbarComponent implements OnInit {
 
   onLogOut() {
     this.router.navigate(['']);
+    this.loginService.signOut();
   }
 
 }

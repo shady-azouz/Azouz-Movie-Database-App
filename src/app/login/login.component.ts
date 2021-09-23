@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    console.log("localStorage name onInit: "+localStorage.getItem('name'));
   }
 
   // onSubmit(form: NgForm) {
@@ -45,11 +46,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitLogin() {
-    console.log(this.signinForm.value);
-    console.log("Validation: " + this.signinForm.valid);
     if (this.loginService.validateLoginAttempt(this.signinForm.value.email, this.signinForm.value.password)) {
-      console.log('Signed In');
       this.router.navigate(['/movies']);
+      for(let account of this.loginService.accounts) {
+        if(account.email == this.signinForm.value.email){
+          localStorage.setItem('name', account.name);
+          console.log('localStorage name after Init: '+localStorage.getItem('name'));
+          break;
+        }
+      }
     }
     else
       console.log('Signe In Failed!')

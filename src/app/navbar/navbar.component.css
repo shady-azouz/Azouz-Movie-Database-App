@@ -1,8 +1,14 @@
 ul {
-    background-color: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url("/assets/movieCovers.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 40%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     list-style-type: none;
     width: 100%;
 }
@@ -14,3 +20,10 @@ li {
     cursor: pointer;
     font-size: x-large;
 }
+
+img {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+    /* height: 100%; */
+    width: 30%;
+    }

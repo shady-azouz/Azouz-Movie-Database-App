@@ -13,10 +13,19 @@ export class LoginService {
     for(var account of this.accounts) {
       if (account.email == email.toLowerCase() && account.password == password){
         valid = true;
+        localStorage.setItem('loggedIn','true');
         break;
       }
     }
     return valid;
+  }
+
+  signOut() {
+    localStorage.setItem('loggedIn','false');
+  }
+
+  isAuthenticated() {
+    return localStorage.getItem('loggedIn');
   }
 
   signUp(name: string, email: string, password: string) {

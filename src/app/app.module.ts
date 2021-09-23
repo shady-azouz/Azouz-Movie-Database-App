@@ -1,3 +1,6 @@
+import { MoviesService } from './movies.service';
+import { AuthGuard } from './aut-guard.service';
+import { LoginService } from './login.service';
 import { MovieComponent } from './movie/movie.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -26,7 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MoviesService, LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

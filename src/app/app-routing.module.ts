@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component'; 
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { AuthGuard } from './aut-guard.service';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'movies', canActivate: [AuthGuard], component: TopMoviesComponent },
+  { path: 'details', canActivate: [AuthGuard], component: MovieDetailsComponent},
   { path: 'home', redirectTo: '', pathMatch: 'full'},
-  { path: 'movies', component: TopMoviesComponent },
-  { path: 'details', component: MovieDetailsComponent}
+  { path: '', component: LoginComponent }
 ];
 
 @NgModule({
