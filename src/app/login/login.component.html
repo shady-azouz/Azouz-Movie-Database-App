@@ -1,16 +1,16 @@
 <div class="row">
     <div class="centered col-md-6">
-            <img
-            class="flex-center"
+            <a href="#signIn"
+            class="flex-center"><img
             src="assets/AMDB.png"
-            style="max-width: 60%"
-            alt="Azouz Movie Database">
+            style="max-width: 60%; margin-left: 20px;"
+            alt="Azouz Movie Database"></a>
     </div>
     <div class="right col-md-6 centered">
         <div>
             <div >
-                <button (click)="onSignIn()" [hidden]="signIn || signUp" class="btn btn-light">Sign In</button>
-                <button (click)="onSignUp()" [hidden]="signUp || signIn" class="btn btn-light">Sign Up</button>
+                <button (click)="onSignIn()" [hidden]="signIn || signUp" class="btn btn-light" id="signIn">Sign In</button>
+                <button (click)="onSignUp()" [hidden]="signUp || signIn" class="btn btn-light" id="signUp">Sign Up</button>
             </div>
         </div>
         <form [hidden]="!signIn" class="flex-center" (ngSubmit)="onSubmitLogin()" #fLogin="ngForm">

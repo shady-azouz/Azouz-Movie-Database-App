@@ -7,6 +7,11 @@
     justify-content: space-around;
 }
 
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
 .disabledButton {
     background-color: grey;
     color: white;
