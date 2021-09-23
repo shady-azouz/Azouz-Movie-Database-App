@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="centered">
         <div class="flex-container1">
             <img 
@@ -11,5 +11,23 @@
         <p>Votes: {{ movie.vote_average }}</p>
         <p>release date: {{ movie.release_date }}</p>
         <a  (click)="onClick()"><u>view details</u></a>
+    </div>
+</div> -->
+
+<div class="centered">
+    <div class="container"
+        style="width:20%;">
+        <a (click)="onClick()"><img
+        style="max-height: 150px"
+        [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+        alt="{{  movie.title }}"></a>
+    </div>
+    <div class="container">
+        <ul>
+            <li><h3 (click)="onClick()"><strong>Name: <u>{{ movie.title }}</u></strong></h3></li>
+            <li><p>Votes: {{ movie.vote_average }}</p></li>
+            <li><p>Release Date: {{ movie.release_date }}</p></li>
+            <li><u><a  (click)="onClick()">view details</a></u></li>
+        </ul>
     </div>
 </div>
