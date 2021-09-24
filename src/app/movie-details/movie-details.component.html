@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-sm-4 centered">
-        <a class="centered" href="#info"><img 
+        <a class="centered" (click)="onImageClick()"><img 
         style="width: 70%;"
         [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
         alt="{{  movie.title }}"

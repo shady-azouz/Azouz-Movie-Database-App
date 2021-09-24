@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Movie } from '../movie/movie.module';
 import { MoviesService } from '../movies.service';
 
@@ -11,7 +12,7 @@ export class MovieDetailsComponent implements OnInit {
   movie!: Movie;
   language: string = "";
 
-  constructor(public moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService, private router: Router) { }
 
   ngOnInit(): void {
     this.movie = this.moviesService.getDetailedMovie();
@@ -36,4 +37,7 @@ export class MovieDetailsComponent implements OnInit {
     }
   }
 
+  onImageClick() {
+    window.scrollTo(0,document.body.scrollHeight);
+  }
 }
