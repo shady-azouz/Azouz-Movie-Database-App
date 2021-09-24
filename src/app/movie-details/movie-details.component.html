@@ -2,14 +2,14 @@
 
 <div class="row">
     <div class="col-sm-4 centered">
-        <img 
+        <a href="#info"><img 
         style="width: 70%;"
         [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
         alt="{{  movie.title }}"
-        class="img-responsive">
+        class="img-responsive"></a>
     </div>
     <div class="col-sm-8 centered">
-        <ul class="custom-card">
+        <ul class="custom-card" id="info">
             <li><h1>Movie: {{ movie.title }}</h1><h2 *ngIf="movie.adult">[18+]</h2></li>
             <li><h3>Date of Release: <u>{{ movie.release_date }}</u></h3></li>
             <li><h3>Language: {{ language }}</h3></li>
