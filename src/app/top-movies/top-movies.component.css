@@ -6,6 +6,13 @@
     width: 100%;
     justify-content : center;
     display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.col-md-6 {
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 .row {

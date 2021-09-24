@@ -1,0 +1,13 @@
+.centered {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.row {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    float: bottom;
+}
