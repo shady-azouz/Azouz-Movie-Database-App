@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-sm-4 centered">
-        <a href="#info"><img 
+        <a class="centered" href="#info"><img 
         style="width: 70%;"
         [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
         alt="{{  movie.title }}"
@@ -16,8 +16,6 @@
             <li><h3>Average Rating: {{ movie.vote_average }}</h3></li>
             <li><h3>Number of Votes: {{ movie.vote_count }}</h3></li>
             <li><h3>Duration: {{ movie.runtime }}</h3></li>
-            <!-- <li><h3>Budget: {{ movie.budget }}</h3></li>
-            <li><h3>Homepage: {{ movie.homepage }}</h3></li> -->
         </ul>
     </div>
 </div>
