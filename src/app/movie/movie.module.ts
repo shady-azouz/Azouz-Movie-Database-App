@@ -1,4 +1,5 @@
 export class Movie {
+  formattedReleaseDate = "";
   constructor(
     public adult: boolean,
     public backdrop_path: string,
@@ -23,5 +24,8 @@ export class Movie {
     public title: string,
     public video: boolean,
     public vote_average: number,
-    public vote_count: number) {}
+    public vote_count: number) {
+      let splitDate = this.release_date.split("-");
+      this.formattedReleaseDate = splitDate[2]+"-"+splitDate[1]+"-"+splitDate[0];
+    }
  }

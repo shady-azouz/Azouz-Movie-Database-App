@@ -11,11 +11,20 @@ import { MoviesService } from '../movies.service';
 export class MovieDetailsComponent implements OnInit {
   movie!: Movie;
   language: string = "";
+  durationFlag = false;
+  revenueFlag = false;
 
   constructor(private moviesService: MoviesService, private router: Router) { }
 
   ngOnInit(): void {
     this.movie = this.moviesService.getDetailedMovie();
+
+    if (this.movie.runtime != null)
+      this.durationFlag = true;
+    
+    if (this.movie.revenue != null)
+      this.revenueFlag = true;
+
     console.log(this.movie);
     switch(this.movie.original_language) {
       case 'en': {

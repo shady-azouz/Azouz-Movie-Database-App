@@ -11,11 +11,14 @@
     <div class="col-sm-8 centered">
         <ul class="custom-card" id="info">
             <li><h1>Movie: {{ movie.title }}</h1><h2 *ngIf="movie.adult">[18+]</h2></li>
-            <li><h3>Date of Release: <u>{{ movie.release_date }}</u></h3></li>
-            <li><h3>Language: {{ language }}</h3></li>
-            <li><h3>Average Rating: {{ movie.vote_average }}</h3></li>
-            <li><h3>Number of Votes: {{ movie.vote_count }}</h3></li>
-            <li><h3>Duration: {{ movie.runtime }}</h3></li>
+            <li><h3><strong>Release Date:</strong> <u> {{ movie.release_date }}</u></h3></li>
+            <li><h3><strong>Language:</strong> {{ language }}</h3></li>
+            <li><h3><strong>Average Rating:</strong> {{ movie.vote_average }}</h3></li>
+            <li><h3><strong>Number of Votes:</strong> {{ movie.vote_count }}</h3></li>
+            <li *ngIf="revenueFlag"><h3><strong>Revenue:</strong> {{ movie.revenue }}</h3></li>
+            <li *ngIf="durationFlag"><h3><strong>Duration:</strong> {{ movie.runtime }}</h3></li>
+
+            <li><h3><strong>Summary:</strong><span> {{ movie.overview }}</span></h3></li>
         </ul>
     </div>
 </div>
