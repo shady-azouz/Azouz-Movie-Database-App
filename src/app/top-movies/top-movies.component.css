@@ -17,4 +17,16 @@
 
 .row {
     width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
 }

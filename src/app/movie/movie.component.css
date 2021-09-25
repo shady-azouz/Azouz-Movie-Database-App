@@ -3,8 +3,14 @@
     margin-left: 4px;
     margin-right: 2px;
     margin-bottom: 2px;
+    /* display: flex; */
+    /* justify-content: flex-start; */
+}
+
+.flex-row {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .centered {
@@ -12,11 +18,8 @@
     margin-left: 4px;
     margin-right: 2px;
     margin-bottom: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    justify-content: flex-start;
-    /* align-items : center; */
-    display: flex;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
     height: 100%;
     width: 100%;
     background-color: white;
@@ -25,6 +28,7 @@
 }
 
 ul {
+    margin-top: 10px;
     list-style-type: none;
 }
 
@@ -52,4 +56,16 @@ li a:hover {
 .flex-container1 {
     display: flex;
     justify-content: flex-start
+}
+
+.img-center {
+    display: flex;
+    justify-content: center;
+    /* padding-bottom: 5px; */
+    background-color: lightgray;
+    border-radius: 13px;
+}
+
+h5 {
+    cursor: pointer;
 }

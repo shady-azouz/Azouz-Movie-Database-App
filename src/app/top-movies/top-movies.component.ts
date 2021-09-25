@@ -55,4 +55,8 @@ export class TopMoviesComponent implements OnInit {
     window.scroll(0,0);
   }
 
+  onGoToTop() {
+    window.scrollTo(0,0);
+  }
+
 }

@@ -3,13 +3,20 @@
 <!-- <div class="flex-container">
     <app-movie [movie]="movie" *ngFor="let movie of movies"></app-movie>
 </div> -->
-<div class="row">
-    <p style="margin-left: 30px;" id="pageNumber">Page: {{ currentPage }}</p>
-    <app-movie class="col-md-6" [movie]="movie" *ngFor="let movie of movies"></app-movie>
-</div>
 <div class="centered">
     <button (click)="onPreviousPage()">&larr;</button>
     <button (click)="onNextPage()">&rarr;</button>
+</div>
+<div class="row">
+    <p style="margin-left: 30px;" id="pageNumber">Page: {{ currentPage }}</p>
+    <app-movie class="col-lg-2 col-md-3 col-sm-4" [movie]="movie" *ngFor="let movie of movies"></app-movie>
+</div>
+<div class="flex-row">
+    <div class="centered">
+        <button (click)="onPreviousPage()">&larr;</button>
+        <button (click)="onNextPage()">&rarr;</button>
+    </div>
+    <span><button (click)="onGoToTop()" style="float: right; margin-right: 10px;">&uArr;</button></span>
 </div>
 
 <app-footer></app-footer>

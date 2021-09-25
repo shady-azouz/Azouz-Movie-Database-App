@@ -1,20 +1,4 @@
-<!-- <div class="container">
-    <div class="centered">
-        <div class="flex-container1">
-            <img 
-            style="max-height: 150px"
-            [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
-            alt="{{  movie.title }}"
-            class="img-responsive">
-            <p>Movie Name: {{ movie.title }} </p>
-        </div>
-        <p>Votes: {{ movie.vote_average }}</p>
-        <p>release date: {{ movie.release_date }}</p>
-        <a  (click)="onClick()"><u>view details</u></a>
-    </div>
-</div> -->
-
-<div class="centered">
+<!-- <div class="centered">
     <div class="container"
         style="width:20%;">
         <a (click)="onClick()"><img
@@ -29,5 +13,24 @@
             <li><p>Release Date: {{ movie.release_date }}</p></li>
             <li><u><a  (click)="onClick()">view details</a></u></li>
         </ul>
+    </div>
+</div> -->
+
+<div class="flex-row">
+    <div class="centered">
+        <div>
+            <a (click)="onClick()" class="img-center"><img
+                style="width: 60%"
+                [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+                alt="{{  movie.title }}"></a>
+        </div>
+        <div>
+            <ul>
+                <li><p>&#11088;: {{ movie.vote_average }}</p></li>
+                <li><h5 (click)="onClick()"><strong><u>{{ movie.title }}</u></strong></h5></li>
+                <li><p>Released: {{ releaseDate }}</p></li>
+                <li><u><a  (click)="onClick()">view details</a></u></li>
+            </ul>
+        </div>
     </div>
 </div>
