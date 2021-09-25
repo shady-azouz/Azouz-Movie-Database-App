@@ -39,6 +39,14 @@ export class MovieDetailsComponent implements OnInit {
         this.language = 'Arabic';
         break;
       }
+      case 'ja': {
+        this.language = 'Japanese';
+        break;
+      }
+      case 'ko': {
+        this.language = 'Korean';
+        break;
+      }
       default: {
         this.language = this.movie.original_language;
         break;

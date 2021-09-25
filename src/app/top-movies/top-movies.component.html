@@ -1,15 +1,15 @@
 <app-navbar></app-navbar>
-<h3 class="centered">Top Movies!</h3>
-<!-- <div class="flex-container">
-    <app-movie [movie]="movie" *ngFor="let movie of movies"></app-movie>
-</div> -->
+<!-- <h1 class="centered">{{ userName }}'s Top Movies List!</h1> -->
+<div style="margin-left: 10px;">
+    <h1>{{ userName }}'s Top Movies List!</h1>
+    <p>Page: {{ currentPage }}</p>
+</div>
 <div class="centered">
     <button (click)="onPreviousPage()">&larr;</button>
     <button (click)="onNextPage()">&rarr;</button>
 </div>
 <div class="row">
-    <p style="margin-left: 30px;" id="pageNumber">Page: {{ currentPage }}</p>
-    <app-movie class="col-lg-2 col-md-3 col-sm-4" [movie]="movie" *ngFor="let movie of movies"></app-movie>
+    <app-movie class="col-lg-2 col-md-3 col-sm-4 col-6" [movie]="movie" *ngFor="let movie of movies"></app-movie>
 </div>
 <div class="flex-row">
     <div class="centered">

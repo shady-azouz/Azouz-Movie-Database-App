@@ -13,6 +13,7 @@ export class TopMoviesComponent implements OnInit {
   currentPage = 1;
   movies: Movie[] = [];
   isLoading: boolean = false;
+  userName = localStorage.getItem('name');
 
   constructor(private moviesService: MoviesService, private router: Router, private http: HttpClient) { }
 

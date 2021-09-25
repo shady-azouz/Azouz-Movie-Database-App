@@ -18,13 +18,12 @@
     margin-left: 4px;
     margin-right: 2px;
     margin-bottom: 5px;
-    /* padding-top: 10px;
-    padding-bottom: 10px; */
     height: 100%;
     width: 100%;
-    background-color: white;
+    background-color: grey;
     border: 3px solid grey;
     border-radius: 15px;
+    color: white;
 }
 
 ul {
@@ -37,12 +36,20 @@ img {
     cursor: pointer;
 }
 
-li h3 {
+li h5 strong {
     cursor: pointer;
 }
 
-li h3 u:hover {
-    color: cadetblue;
+li h5 strong:hover {
+    color: lightblue;
+}
+
+li a u {
+    color: white;
+}
+
+li a u:hover {
+    color: lightblue;
 }
 
 li a {
@@ -65,8 +72,4 @@ li a:hover {
     /* padding-bottom: 5px; */
     background-color: lightgray;
     border-radius: 13px;
-}
-
-h5 {
-    cursor: pointer;
 }
