@@ -14,14 +14,15 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-  loadMovies(url: string, apiKey: string) {
+  loadMovies() {
     this.isLoading = true;
-    this.http.get<any>(url, {
-      params: new HttpParams().set('api_key', apiKey)
+    this.http.get<any>('https://api.themoviedb.org/3/movie/top_rated', {
+      params: new HttpParams().set('api_key', '1d4f34b314b06846ce7f1944325767ba').set('page',this.currentPage),
     }).subscribe(
       response => {
         console.log(response);
-        this.loadedMovies = response['response'];
+        this.loadedMovies = response['results'];
+        console.log("size of Movies list: " + this.loadedMovies.length);
       },
       (error) => {
         console.log("Error retrieving movies from api: " + error);
@@ -44,5 +45,16 @@ export class MoviesService {
 
   setCurrentPage(currentPage: number) {
     this.currentPage = currentPage;
+    console.log('Current Page: '+this.currentPage);
+  }
+
+  incrementCurrentPage() {
+    this.currentPage ++;
+    console.log('Current Page: '+this.currentPage);
+  }
+
+  decrementCurrentPage() {
+    this.currentPage --;
+    console.log('Current Page: '+this.currentPage);
   }
 }

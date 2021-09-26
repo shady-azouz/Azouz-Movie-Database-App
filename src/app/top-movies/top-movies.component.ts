@@ -20,6 +20,7 @@ export class TopMoviesComponent implements OnInit {
   ngOnInit(): void {
     this.currentPage = this.moviesService.getCurrentPage();
     this.loadMovies(this.currentPage);
+    // this.movies = this.moviesService.loadMovies();
   }
 
   loadMovies(pageNumber: number) {
@@ -44,15 +45,23 @@ export class TopMoviesComponent implements OnInit {
 
   onPreviousPage() {
     if(this.currentPage > 1){
-      this.loadMovies(--this.currentPage);
-      this.moviesService.setCurrentPage(this.currentPage);
+      // this.currentPage --;
+      // this.moviesService.setCurrentPage(this.currentPage);
+      // this.movies = this.moviesService.loadMovies();
+      this.moviesService.setCurrentPage(--this.currentPage);
+      this.loadMovies(this.currentPage);
+      console.log('Loaded Movies');
       window.scroll(0,0);
     }
   }
 
   onNextPage() {
-    this.loadMovies(++this.currentPage);
-    this.moviesService.setCurrentPage(this.currentPage);
+    // this.currentPage ++;
+    // this.moviesService.setCurrentPage(this.currentPage);
+    // this.movies = this.moviesService.loadMovies();
+    this.moviesService.setCurrentPage(++this.currentPage);
+      this.loadMovies(this.currentPage);
+    console.log('Loaded Movies');
     window.scroll(0,0);
   }
 
