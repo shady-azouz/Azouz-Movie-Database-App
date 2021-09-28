@@ -14,6 +14,7 @@ export class LoginService {
       if (account.email == email.toLowerCase() && account.password == password){
         valid = true;
         localStorage.setItem('loggedIn','true');
+        localStorage.setItem('name', account.name);
         break;
       }
     }
@@ -22,6 +23,7 @@ export class LoginService {
 
   signOut() {
     localStorage.setItem('loggedIn','false');
+    localStorage.removeItem('name');
   }
 
   isAuthenticated() {

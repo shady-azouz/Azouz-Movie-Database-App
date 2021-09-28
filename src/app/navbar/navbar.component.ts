@@ -18,7 +18,12 @@ export class NavbarComponent implements OnInit {
 
   onGoHome() {
     this.moviesService.setCurrentPage(1);
-    this.router.navigate(['/movies']);
+    if(this.router.url === '/details')
+      this.router.navigate(['/movies']);
+    else if(this.router.url === '/movies'){
+        this.router.navigate(['/movies']);
+        window.location.reload();
+      }
   }
 
   onLogOut() {
