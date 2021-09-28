@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Movie } from '../movie/movie.module';
@@ -12,55 +12,41 @@ import { MoviesService } from '../movies.service';
 export class TopMoviesComponent implements OnInit {
   currentPage = 1;
   movies: Movie[] = [];
-  isLoading: boolean = false;
   userName = localStorage.getItem('name');
 
   constructor(private moviesService: MoviesService, private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.currentPage = this.moviesService.getCurrentPage();
-    this.loadMovies(this.currentPage);
-    // this.movies = this.moviesService.loadMovies();
+    this.loadMovies();
   }
 
-  loadMovies(pageNumber: number) {
-    this.isLoading = true;
-    this.http.get<any>('https://api.themoviedb.org/3/movie/top_rated', {
-      params: new HttpParams().set('api_key', '1d4f34b314b06846ce7f1944325767ba').set('page',pageNumber),
-    }).subscribe(
-      response => {
-        console.log(response);
-        this.movies = response['results'];
-        console.log("size of Movies list: " + this.movies.length);
-      },
-      (error) => {
-        console.log("Error retrieving movies from api: " + error);
-      }
-    );
-  }
-
-  onClick() {
-    this.router.navigate(['/home']);
-  }
+loadMovies() {
+  this.moviesService.loadMovies().subscribe(
+    response => {
+      console.log(response);
+      this.movies = response['results'];
+      console.log("size of Movies list: " + this.movies.length);
+    },
+    (error) => {
+      console.log("Error retrieving movies from api: " + error);
+    }
+  );
+}
 
   onPreviousPage() {
     if(this.currentPage > 1){
-      // this.currentPage --;
-      // this.moviesService.setCurrentPage(this.currentPage);
-      // this.movies = this.moviesService.loadMovies();
       this.moviesService.setCurrentPage(--this.currentPage);
-      this.loadMovies(this.currentPage);
-      console.log('Loaded Movies');
+      this.loadMovies();
+      console.log('Loaded Movies ' + this.movies.length);
+      console.log(this.movies);
       window.scroll(0,0);
     }
   }
 
   onNextPage() {
-    // this.currentPage ++;
-    // this.moviesService.setCurrentPage(this.currentPage);
-    // this.movies = this.moviesService.loadMovies();
     this.moviesService.setCurrentPage(++this.currentPage);
-      this.loadMovies(this.currentPage);
+    this.loadMovies();
     console.log('Loaded Movies');
     window.scroll(0,0);
   }

@@ -15,20 +15,9 @@ export class MoviesService {
   constructor(private http: HttpClient) { }
 
   loadMovies() {
-    this.isLoading = true;
-    this.http.get<any>('https://api.themoviedb.org/3/movie/top_rated', {
+    return this.http.get<any>('https://api.themoviedb.org/3/movie/top_rated', {
       params: new HttpParams().set('api_key', '1d4f34b314b06846ce7f1944325767ba').set('page',this.currentPage),
-    }).subscribe(
-      response => {
-        console.log(response);
-        this.loadedMovies = response['results'];
-        console.log("size of Movies list: " + this.loadedMovies.length);
-      },
-      (error) => {
-        console.log("Error retrieving movies from api: " + error);
-      }
-    );
-    return this.loadedMovies;
+    });
   }
 
   getDetailedMovie() {
