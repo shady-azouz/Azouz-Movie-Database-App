@@ -10,4 +10,5 @@
     display: flex;
     align-items: center;
     float: bottom;
+    margin: 0;
 }
