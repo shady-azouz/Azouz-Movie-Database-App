@@ -1,5 +1,5 @@
-import { MoviesService } from './../movies.service';
-import { LoginService } from './../login.service';
+import { MoviesService } from '../shared/services/movies.service';
+import { LoginService } from '../shared/services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 

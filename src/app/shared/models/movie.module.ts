@@ -9,7 +9,7 @@ export class Movie {
     public id: number,
     public imdb_id: string,
     public original_language: string,
-    public origianal_title: string,
+    public original_title: string,
     public overview: string,
     public popularity: number,
     public poster_path: string,
