@@ -22,6 +22,7 @@ export class MovieComponent implements OnInit {
   }
 
   onClick() {
+    window.scroll(0,0);
     this.moviesService.setDetailedMovie(this.movie);
     this.router.navigate(['/details']);
   }

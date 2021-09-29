@@ -17,6 +17,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onGoHome() {
+    window.scroll(0,0);
     this.moviesService.setCurrentPage(1);
     if(this.router.url === '/details')
       this.router.navigate(['/movies']);
@@ -27,6 +28,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onLogOut() {
+    window.scroll(0,0);
     this.router.navigate(['']);
     this.loginService.signOut();
   }

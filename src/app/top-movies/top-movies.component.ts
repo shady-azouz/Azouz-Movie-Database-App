@@ -43,16 +43,16 @@ export class TopMoviesComponent implements OnInit {
 
   onPreviousPage() {
     if(this.currentPage > 1){
+      window.scroll(0,0);
       this.moviesService.setCurrentPage(--this.currentPage);
       this.loadMovies();
-      window.scroll(0,0);
     }
   }
 
   onNextPage() {
+    window.scroll(0,0);
     this.moviesService.setCurrentPage(++this.currentPage);
     this.loadMovies();
-    window.scroll(0,0);
   }
 
   onGoToTop() {
