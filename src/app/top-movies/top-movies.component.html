@@ -9,7 +9,10 @@
     <button (click)="onPreviousPage()">&larr;</button>
     <button (click)="onNextPage()">&rarr;</button>
 </div>
-<div class="row">
+<div *ngIf="loading" class="centered">
+    <img src="assets/loading.gif">
+</div>
+<div class="row" *ngIf="!loading">
     <app-movie class="col-lg-2 col-md-3 col-sm-4 col-6" [movie]="movie" *ngFor="let movie of movies"></app-movie>
 </div>
 <div class="flex-row">

@@ -10,6 +10,7 @@ import { MoviesService } from '../shared/services/movies.service';
   styleUrls: ['./top-movies.component.css']
 })
 export class TopMoviesComponent implements OnInit {
+  loading = true;
   currentPage = 1;
   movies: Movie[] = [];
   userName = localStorage.getItem('name');
@@ -22,6 +23,7 @@ export class TopMoviesComponent implements OnInit {
   }
 
   loadMovies() {
+    this.loading = true;
     // this.moviesService.loadMovies().subscribe(
     //   response => {
     //     console.log(response);
@@ -35,6 +37,7 @@ export class TopMoviesComponent implements OnInit {
     this.moviesService.loadMovies().then(movies => {
       this.movies =  movies;
       // console.log(this.movies);
+      this.loading = true;
     });
   }
 
