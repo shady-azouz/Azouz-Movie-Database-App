@@ -11,7 +11,7 @@
     <div class="col-sm-8 centered">
         <ul class="custom-card" id="info">
             <li><h1>Movie: {{ movie.title }}</h1><h2 *ngIf="movie.adult">[18+]</h2></li>
-            <li><h3><strong>Release Date:</strong> <u> {{ movie.release_date }}</u></h3></li>
+            <li><h3><strong>Release Date:</strong> {{ formattedReleaseDate }} </h3></li>
             <li><h3><strong>Language:</strong> {{ language }}</h3></li>
             <li><h3><strong>Average Rating:</strong> {{ movie.vote_average }}</h3></li>
             <li><h3><strong>Number of Votes:</strong> {{ movie.vote_count }}</h3></li>

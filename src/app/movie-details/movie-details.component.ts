@@ -13,11 +13,14 @@ export class MovieDetailsComponent implements OnInit {
   language: string = "";
   durationFlag = false;
   revenueFlag = false;
+  formattedReleaseDate = "";
 
   constructor(private moviesService: MoviesService, private router: Router) { }
 
   ngOnInit(): void {
     this.movie = this.moviesService.getDetailedMovie();
+    let splitDate = this.movie.release_date.split('-');
+    this.formattedReleaseDate = splitDate[2]+"-"+splitDate[1]+"-"+splitDate[0];
 
     if (this.movie.runtime != null)
       this.durationFlag = true;
