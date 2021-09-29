@@ -14,10 +14,23 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-  loadMovies() {
+  oldLoadMovies() {
     return this.http.get<any>('https://api.themoviedb.org/3/movie/top_rated', {
       params: new HttpParams().set('api_key', '1d4f34b314b06846ce7f1944325767ba').set('page',this.currentPage),
     });
+  }
+
+  async loadMovies(): Promise<Movie[]> {
+    try {
+      let response = await this.http.get<any>('https://api.themoviedb.org/3/movie/top_rated', {
+        params: new HttpParams().set('api_key', '1d4f34b314b06846ce7f1944325767ba').set('page',this.currentPage),
+      })
+        .toPromise();
+      return response['results'];
+    } catch (error) {
+      console.log("Error retrieving movies from api: " + error);
+      return [];
+    }
   }
 
   getDetailedMovie() {

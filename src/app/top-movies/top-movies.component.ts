@@ -22,16 +22,17 @@ export class TopMoviesComponent implements OnInit {
   }
 
   loadMovies() {
-    this.moviesService.loadMovies().subscribe(
-      response => {
-        console.log(response);
-        this.movies = response['results'];
-        console.log("size of Movies list: " + this.movies.length);
-      },
-      (error) => {
-        console.log("Error retrieving movies from api: " + error);
-      }
-    );
+    // this.moviesService.loadMovies().subscribe(
+    //   response => {
+    //     console.log(response);
+    //     this.movies = response['results'];
+    //     console.log("size of Movies list: " + this.movies.length);
+    //   },
+    //   (error) => {
+    //     console.log("Error retrieving movies from api: " + error);
+    //   }
+    // );
+    this.moviesService.loadMovies().then(movies => this.movies =  movies);
   }
 
   onPreviousPage() {
