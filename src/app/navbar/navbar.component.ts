@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
     this.moviesService.setCurrentPage(1);
     if(this.router.url === '/details')
       this.router.navigate(['/movies']);
-    else if(this.router.url === '/movies' && this.moviesService.getCurrentPage() > 1){
+    else if(this.router.url === '/movies'){
         this.router.navigate(['/movies']);
         window.location.reload();
       }
