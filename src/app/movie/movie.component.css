@@ -26,6 +26,11 @@
     color: white;
 }
 
+.centered:hover {
+    transform: translate(0, -2%);
+    box-shadow: 0 0 11px black; 
+}
+
 ul {
     margin-top: 10px;
     padding-left: 15px;
