@@ -20,7 +20,6 @@ describe('TopMoviesComponent', () => {
   let component: TopMoviesComponent;
   let fixture: ComponentFixture<TopMoviesComponent>;
   let testMovie: Movie = {
-    formattedReleaseDate: '',
     adult: false,
     backdrop_path: '/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg',
     budget: 63000000,
@@ -128,21 +127,16 @@ describe('TopMoviesComponent', () => {
   });
 
   it('should create object', fakeAsync(() => {
-    // tick();
     expect(component).toBeTruthy();
   }));
 
   it(
     'should load a movie',
     fakeAsync(() => {
-      // let spy = spyOn(moviesService, 'loadMovies').and.returnValue(
-      //   of([testMovie])
-      // );
       component.loadMovies();
       tick();
       fixture.detectChanges();
       console.log(component.movies);
-      // console.log(fixture.debugElement.nativeElement.querySelector('#testSelector').innerHTML);
       expect(component.movies).toEqual([testMovie]);
     })
   );

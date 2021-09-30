@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LoginService {
-  accounts = [{name: 'Shady Azouz', email: 'shady.azouz@gmail.com', password: 'dummyPassword'}]
+  accounts = [{name: 'Shady Azouz', email: 'shady.azouz@gmail.com', password: 'dummyPassword'}];
+  loggedIn = false;
 
   constructor() { }
 
@@ -15,6 +16,7 @@ export class LoginService {
         valid = true;
         localStorage.setItem('loggedIn','true');
         localStorage.setItem('name', account.name);
+        this.loggedIn = true;
         break;
       }
     }
@@ -24,6 +26,7 @@ export class LoginService {
   signOut() {
     localStorage.setItem('loggedIn','false');
     localStorage.removeItem('name');
+    this.loggedIn = false;
   }
 
   isAuthenticated() {
@@ -43,5 +46,9 @@ export class LoginService {
       }
     }
     return valid;
+  }
+
+  isLoggedIn() {
+    return this.loggedIn;
   }
 }

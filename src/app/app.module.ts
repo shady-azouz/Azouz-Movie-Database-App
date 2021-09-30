@@ -1,5 +1,5 @@
 import { MoviesService } from './shared/services/movies.service';
-import { AuthGuard } from './aut-guard.service';
+import { AuthGuard } from './shared/aut-guard/aut-guard.service';
 import { LoginService } from './shared/services/login.service';
 import { MovieComponent } from './movie/movie.component';
 import { FormsModule } from '@angular/forms';
