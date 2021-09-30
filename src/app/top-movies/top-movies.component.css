@@ -32,3 +32,30 @@
     display: flex;
     justify-content: center;
 }
+
+.title {
+    margin: 20px 0 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.title h1 {
+    font-size: 30px;
+}
+
+.card {
+    border: 2px solid grey;
+    border-radius: 7px;
+    background-color: white;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card p {
+    margin: 0 5px 0 0;
+}

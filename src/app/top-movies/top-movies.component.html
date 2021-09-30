@@ -1,13 +1,15 @@
 <app-navbar></app-navbar>
 
 <!-- <h1 class="centered">{{ userName }}'s Top Movies List!</h1> -->
-<div style="margin-left: 10px;">
+<div style="margin-left: 10px;" class="title">
     <h1>{{ userName }}'s Top Movies List!</h1>
-    <p>Page: {{ currentPage }}</p>
 </div>
 <div class="centered">
-    <button (click)="onPreviousPage()">&larr;</button>
-    <button (click)="onNextPage()">&rarr;</button>
+    <div class="card">
+        <p>{{ currentPage * 20 - 20 + 1 }} - {{ currentPage * 20 }} / 1000</p>
+        <button (click)="onPreviousPage()">&larr;</button>&nbsp;
+        <button (click)="onNextPage()">&rarr;</button>
+    </div>
 </div>
 <div *ngIf="loading" class="centered">
     <img src="assets/loading.gif">
@@ -17,7 +19,7 @@
 </div>
 <div class="flex-row">
     <div class="centered">
-        <button (click)="onPreviousPage()">&larr;</button>
+        <button (click)="onPreviousPage()">&larr;</button>&nbsp;
         <button (click)="onNextPage()">&rarr;</button>
     </div>
 </div>
